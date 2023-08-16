@@ -1,28 +1,26 @@
 public class Student {
-  static int k = 0;
+  private static int k = 0;
   private int id;
   private String name;
   private int problemsSolved;
-
-  public Student(String input) {
-    this.name = input;
-    this.problemsSolved = 0;
+  public Student(String name, int probSolv) {
+    this.name = name;
+    this.problemsSolved = probSolv;
     this.id = getK();
-    ++k;
+    setK();
   }
-
-  static int getK() {
-    return k;
+  private int getK() {
+    return Student.k;
   }
-
+  private void setK() {
+    Student.k++;
+  }
   public int getId() {
     return this.id;
   }
-
   public String getName() {
     return this.name;
   }
-
   public int getProblemsSolved() {
     return this.problemsSolved;
   }
