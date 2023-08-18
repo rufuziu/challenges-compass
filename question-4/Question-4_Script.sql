@@ -1,8 +1,6 @@
-DROP TABLE Person;
+CREATE DATABASE question04 ;
 
-DROP TABLE Address;
-
-
+\c question04
 
 CREATE TABLE Address (
   addressId SERIAL PRIMARY KEY ,
@@ -48,3 +46,7 @@ VALUES (
   '09834667930' ,
   1
 );
+
+SELECT Person.name, Person.email, Person.age, Address.street, Address.complement,
+Address.state, Address.country FROM Person
+INNER JOIN Address ON Person.address_id = Address.addressId
