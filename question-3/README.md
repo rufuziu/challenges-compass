@@ -20,7 +20,7 @@ of valid expressions
 
 I have coded two fluxs on "Main", the first is using  
 resources, the second is with prompt input.  
-The fist flux is the "default" run, to see others  
+The first flux is the "default" run, to see others  
 results, just change the content in "resources/testFile.txt".  
 The second flux run if the first flux don't find the file,  
 to run it delete the "testFile.txt".
