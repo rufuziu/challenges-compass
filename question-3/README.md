@@ -6,7 +6,7 @@ I understood this software requirements to code:
 - Do only additions and subtractions with  
 valid entries
 - The first entrie is "m", the number of operands
-- The second entrie is a arithmetic expression
+- The second entrie is an arithmetic expression
 - With the number of operands validated, the number  
 of operations in the arithmetic expression must be "m-1"
 - If the first and second entrie is valid,  
