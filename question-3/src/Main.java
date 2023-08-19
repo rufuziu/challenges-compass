@@ -3,7 +3,6 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 public class Main {
   public static void main(String[] args) {
-    File testFile = new File("resources\\testFile.txt");
     try (Scanner scanner = new Scanner(new File("resources\\testFile.txt"))) {
       while (scanner.hasNextLine()) {
         try {
