@@ -1,132 +1,26 @@
-# challenges-compass
+# Question-3  Calculate  
 
-1 -  only additions and subtractions
+Reading the "Challenge 1- Week 1 -- Question 3." document,  
+I understood this software requirements to code:  
 
-2 - 1 < m < 100 ( m = input )
+- Do only additions and subtractions with  
+valid entries
+- The first entrie is "m", the number of operands
+- The second entrie is a arithmetic expression
+- With the number of operands validated, the number  
+of operations in the arithmetic expression must be "m-1"
+- If the first and second entrie is valid,  
+calculate the arithmetic expression
+- Save the result
+- While "m" is differs to 0, run the program
+- When "m" is equal to 0, stop the run and  
+print all the results of valid arithmetic expresions 
+in the format "Test n", were "n" is the order  
+of valid expressions
 
-3 - 
-    Xi = operand (0 <= Xi <= 100)
-    sj = operator '+' or '-' (1<= j < m)
-
-    formula:  result = Xi sj .. Xm-1 sm-1 Xm
-
-4 - while m != 0 
-
-    if m = 0
-
-        Test 1
-        result
-
-        Test 2
-        result
-
-
-
-//version 1
-package src;
-
-import java.util.Scanner;
-
-public class Main {
-  public static void main(String[] args) {
-
-    Scanner scanner = new Scanner(System.in);
-
-    while (true) {
-      try {
-        String m = scanner.nextLine();
-        int M = Integer.parseInt(m);
-        if (M == 0) break;
-        else if (!(M < 0) && !(M > 100)) {
-          String op = scanner.nextLine();
-          if(op.charAt(0)=='-') M++;
-          op = op.replaceAll(" ", "");
-          String str = op.replaceAll("[0-9]", "");
-          if (M == str.length()) {
-            str = op;
-            str = str.replaceAll("[+]", " ");
-            str = str.replaceAll("-", " -").trim();
-
-            String[] numbers = str.split(" ");
-            int plusCounter =0;
-            int minusCounter =0;
-            for (String n : numbers) {
-              int num = Integer.parseInt(n);
-              if (num >= 0) {
-                plusCounter++;
-              }
-              else{
-                minusCounter++;
-              }
-            }
-            int[] positive = new int[plusCounter];
-            int[] negative = new int[minusCounter];
-            int index = 0;
-            for (String n : numbers
-            ) {
-              int num = Integer.parseInt(n);
-              if (num >= 0) {
-                positive[index] = num;
-                index++;
-              }
-            }
-            index = 0;
-
-            for (String n : numbers
-            ) {
-              int num = Integer.parseInt(n);
-              if (num < 0) {
-                negative[index] = num;
-                index++;
-              }
-            }
-            System.out.println("POSITIVES");
-            for(int i : positive){
-              System.out.print(i + " ");
-            }
-            System.out.println("\nNEGATIVES");
-            for(int i : negative){
-              System.out.print(i + " ");
-            }
-          }
-        }
-
-
-        //System.out.println("STR:  "+ str);
-        //String[] operators = numbers.split("");
-        // String[] operands = op.split("[+-]");
-        // for (String o: operators
-        // ) {
-        //   System.out.println(o);
-        //  }
-
-        //OK
-        //op = op.replaceAll(" ","");
-        //
-        //int i =0;
-        //int counter = 0;
-        //while(true){
-        //  int founder = op.indexOf("-", i);
-        //  if (founder == -1)break;
-        //  counter++;
-        //  i = founder+1;
-        // }
-        // System.out.println(counter);
-        // op = op.replaceAll("[+]"," ");
-        // System.out.println(op);
-
-
-      } catch (Exception e) {
-
-      }
-    }
-  }
-}
-/*
-      String op = scanner.nextLine();
-      if(!op.isEmpty()){
-        Calculator.Calculate(op,m);
-      }
-    }
-
- */
+I have coded two fluxs on "Main", the first is using  
+resources, the second is with prompt input.  
+The fist flux is the "default" run, to see others  
+results, just change the content in "resources/testFile.txt".  
+The second flux run if the first flux don't find the file,  
+to run it delete the "testFile.txt".
