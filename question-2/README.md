@@ -1,17 +1,14 @@
-# challenges-compass
+ # Question-2  (OBI-2020)
 
-1 - create private static final variables to represent the sentiments [ok]
+Reading the "Challenge 1- Week 1 -- Question 2." document,  
+I understood this software requirements to code:  
 
-2 - create a counter to recieve the amount of emoticons on text [ok]
+- Read an entry
+- After readed print the sentiment of the entry
 
-4 - write a input to determinate the sentiment [OK]
-
-5 - use scanner / finding a way to use a file to test [PARCIAL]
-
-6 - create a method to find emoticons [OK]
-
-7 - (  :-) n == :-( n  ) = neutral
-    (  :-) n > :-( n  ) = fun
-    (  :-) n < :-( n  ) = upset
-    [OK] - create a method to print the sentiment according to the feelingCounter
-
+I have coded two fluxs on "Main", the first is using  
+resources, the second is with prompt input.  
+The first flux is the "default" run, to see others  
+results, just change the content in "resources/testFile.txt".  
+The second flux run if the first flux don't find the file,  
+to run it delete the "testFile.txt".
