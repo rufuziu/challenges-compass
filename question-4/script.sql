@@ -47,6 +47,12 @@ VALUES (
   1
 );
 
-SELECT Person.name, Person.email, Person.age, Address.street, Address.complement,
-Address.state, Address.country FROM Person
+SELECT Person.*, Address.* FROM Person
 INNER JOIN Address ON Person.address_id = Address.addressId;
+
+DROP TABLE Address CASCADE;
+DROP TABLE Person;
+
+\c postgres
+
+DROP DATABASE question04;
