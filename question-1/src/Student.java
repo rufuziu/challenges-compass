@@ -1,4 +1,4 @@
-public class Student {
+public class Student implements Comparable<Student> {
   private static int k = 0;
   private int id;
   private String name;
@@ -21,7 +21,15 @@ public class Student {
   public String getName() {
     return this.name;
   }
-  public int getProblemsSolved() {
-    return this.problemsSolved;
+  public int getProblemsSolved() { return this.problemsSolved; }
+  @Override
+  public int compareTo(Student o) {
+    int x = this.getProblemsSolved() - o.getProblemsSolved();
+    if(x > 0){
+      return this.getName().compareTo(o.getName());
+    }
+    else{
+      return o.getName().compareTo(this.getName());
+    }
   }
 }

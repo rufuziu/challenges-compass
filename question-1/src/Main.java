@@ -1,68 +1,92 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
-
 public class Main {
   private static String name;
   private static int numbProb;
-  private static void resetVars(){
+  private static void resetVars() {
     name = "";
     numbProb = 0;
   }
-  private static boolean checkInput(String inpu) {
-    name = inpu.replaceAll("[^0-9]", "");
-    if (name.length() == 1) {
+  private static boolean checkInput(String input) {
+    name = input.replaceAll("[^0-9]", "");
+    if (name.length() <= 2) {
       try {
         numbProb =
-                Integer.parseInt(inpu.replaceAll("[^0-9]", ""));
+                Integer.parseInt(input.replaceAll("[^0-9]", ""));
       } catch (Exception e) {
         resetVars();
         return false;
       }
-      if (numbProb > 0 && numbProb <= 9) {
-        name = inpu.replaceAll("[^a-z]", "");
-        return !name.isEmpty() && name.length() <= 20;
+      if (numbProb > 0 && numbProb <= 10) {
+        name = input.replaceAll("[a-z]|[0-9]| ","");
+        if(!name.isEmpty()){
+          resetVars();
+          return false;
+        }
+        else{
+          name = input.replaceAll("[^a-z]", "");
+          return !name.isEmpty() && name.length() <= 20;
+        }
       }
-    }
-    else {
+    } else {
       resetVars();
       return false;
     }
     return false;
   }
-  private static void printStudent(Student s) {
+  private static void unfortunateStudent(List<Student> students) {
+    Collections.sort(students);
     System.out.print("Instancia ");
-    System.out.print(s.getId());
+    System.out.print(students.get(0).getId());
     System.out.println();
-    System.out.print(s.getName());
+    System.out.print(students.get(0).getName());
     System.out.print(" ");
-    System.out.print(s.getProblemsSolved());
-    //remove on last commit
-    System.out.println();
+    System.out.print(students.get(0).getProblemsSolved());
   }
   public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-    int x = 0;
-    while (x < 2 || x >= 100) {
-      try {
-        x = Integer.parseInt(scanner.nextLine());
-      } catch (Exception ex) {
-        x = 0;
+    List<Student> students = new ArrayList<>();
+    String input;
+    int x;
+    try (Scanner scanner = new Scanner(
+            new File("resources\\testFile.txt"))) {
+      while (scanner.hasNextLine()) {
+        try {
+          x = Integer.parseInt(scanner.nextLine());
+          if (x >= 1 && x <= 100) {
+            while (x != 0) {
+              input = scanner.nextLine().trim();
+              if (checkInput(input)) {
+                students.add(new Student(name, numbProb));
+                resetVars();
+                x--;
+              }
+            }
+            unfortunateStudent(students);
+          }
+        } catch (Exception ex) {}
       }
-    }
-    if (x >= 2 && x <= 100) {
-      List<Student> stu = new ArrayList<>();
-      String input;
-      while (x != 0) {
-        input = scanner.nextLine().trim();
-        if (checkInput(input)) {
-          stu.add(new Student(name, numbProb));
-          resetVars();
-          x--;
-        }
-      }
-      for (Student s : stu) {
-        printStudent(s);
+    } catch (FileNotFoundException e) {
+      Scanner scanner = new Scanner(System.in);
+      while (true) {
+        try {
+          x = Integer.parseInt(scanner.nextLine());
+          if (x >= 1 && x <= 100) {
+            while (x != 0) {
+              input = scanner.nextLine().trim();
+              if (checkInput(input)) {
+                students.add(new Student(name, numbProb));
+                resetVars();
+                x--;
+              }
+            }
+            unfortunateStudent(students);
+            break;
+          }
+        } catch (Exception ex) {}
       }
     }
   }
