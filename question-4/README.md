@@ -1,90 +1,27 @@
+# Question-4  Script Postgres   
 
-I'm starting this question today(2023-08-17)
+Reading the "Challenge 1- Week 1 -- Question 4." document,  
+I understood this script to code:
 
-Procedure
+- Create two tables(Person and Address) with
+particular fields
+- Insert into the tables, and the Person register  
+must be associated with an Address
+- Select some fields in a join  
 
-CREATE TABLE Address, Person;
+I have writed this script and run it in the SqlShell.  
+After logged in the DBMS, I executed this command on  
+propmt:  
 
-INSERT INTO Address
-                    3 addresses
-            Person
-                    me with my Address;
+\i 'path/question-4/script.sql'  
 
-SELECT Person(name,email,age), Address(street,complement,state,country)
-FROM Person
-INNER JOIN Address ON Person(address_id) = Address(addressId)
+Then the process is:  
 
-I have done two queries
-To CREATE and DROP
-
-This file is the initial-version of it
-
-\i 'C:/Users/PROG11/Desktop/question4.sql'
-
-SELECT Person.name, Person.email, Person.age, Address.street, Address.complement,
-Address.state, Address.country FROM Person
-INNER JOIN Address ON Person.address_id = Address.addressId;
-
-
-
-
-
-CREATE DATABASE question04 ;
-
-\c question04
-
-CREATE TABLE Address (
-  addressId SERIAL PRIMARY KEY ,
-  zip VARCHAR(16) NOT NULL,
-  street VARCHAR(128) NOT NULL,
-  complement VARCHAR(64) ,
-  neighborhood VARCHAR(32) NOT NULL,
-  city VARCHAR(16) NOT NULL,
-  state VARCHAR(16) NOT NULL,
-  country VARCHAR(32) NOT NULL
-);
-
-CREATE TABLE Person (
-  person_id SERIAL PRIMARY Key ,
-  name VARCHAR(64) NOT NULL,
-  birthday DATE NOT NULL ,
-  age INTERVAL ,
-  phone VARCHAR(16) ,
-  height DECIMAL(4,2) ,
-  email VARCHAR(128) NOT NULL ,
-  cpf VARCHAR(11) NOT NULL ,
-  address_id INTEGER REFERENCES Address(addressId)
-);
-
-INSERT INTO address (zip, street, complement, neighborhood, city, state, country)
-VALUES (
-  '840050190' ,
-  'RUA PARANAGUA, 5' ,
-  'BLOCO 1, AP32' ,
-  'PONTA GROSSA' ,
-  'VILA ESTRELA' ,
-  'PARANA' , 
-  'BRAZIL' );
-
-INSERT INTO person (name, birthday, age, phone, height, email, cpf, address_id)
-VALUES (
-  'IURY DE MATTOS' ,
-  '1995-11-07' ,
-  AGE(TIMESTAMP '1995-11-07') ,
-  '5542999254823' ,
-  1.83,
-  'IURY.MATTOS.PB@COMPASS.COM.BR' , 
-  '09834667930' ,
-  1
-);
-
-SELECT Person.*, Address.* FROM Person
-INNER JOIN Address ON Person.address_id = Address.addressId;
-
-
-DROP TABLE Address CASCADE;
-DROP TABLE Person;
-
-\c postgres
-
-DROP DATABASE question04;
+- CREATE a database named "question04"
+- CONNECT to it
+- CREATE the tables "Address" and "Person"
+- INSERT into the tables "Address" and "Person"
+- SELECT "Person.*" and "Address.*" JOINED
+- DROP the tables "Address" and "Person"
+- CONNECT to database "postgres"
+- DROP database "question04"

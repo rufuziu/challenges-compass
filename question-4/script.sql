@@ -27,11 +27,11 @@ CREATE TABLE Person (
 
 INSERT INTO address (zip, street, complement, neighborhood, city, state, country)
 VALUES (
-  '840050190' ,
-  'RUA PARANAGUA, 5' ,
-  'BLOCO 1, AP32' ,
-  'PONTA GROSSA' ,
-  'VILA ESTRELA' ,
+  '840000000' ,
+  'RUA TESTE, 5' ,
+  'COMEÇO DA RUA' ,
+  'CIDADE AZUL' ,
+  'VILA VERDE' ,
   'PARANA' , 
   'BRAZIL' );
 
@@ -43,10 +43,10 @@ VALUES (
   '5542999254823' ,
   1.83,
   'IURY.MATTOS.PB@COMPASS.COM.BR' , 
-  '09834667930' ,
+  '00000000000' ,
   1
 );
 
 SELECT Person.name, Person.email, Person.age, Address.street, Address.complement,
 Address.state, Address.country FROM Person
-INNER JOIN Address ON Person.address_id = Address.addressId
+INNER JOIN Address ON Person.address_id = Address.addressId;
