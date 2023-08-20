@@ -13,7 +13,7 @@ must be between 1 and 100
 "Instancia k", were k is the student instance, your name and  
 the number of problems solved 
 - If two students solved the same number of problems,  
-the worst student will be decide by alphabetical order
+the worst student will be decide by descendent alphabetical order
 
 I have coded two fluxs on "Main", the first is using  
 resources, the second is with prompt input.  
