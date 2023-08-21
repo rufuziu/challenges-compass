@@ -6,12 +6,11 @@ public class Main {
     try (Scanner scanner = new Scanner(new File("resources\\testFile.txt"))) {
       while (scanner.hasNextLine()) {
         try {
-          String m = scanner.nextLine();
-          int M = Integer.parseInt(m);
-          if (M == 0) break;
-          else if (!(M < 0) && !(M > 100)) {
+          int m = Integer.parseInt(scanner.nextLine());
+          if (m == 0) break;
+          else if (!(m < 0) && !(m > 100)) {
             String op = scanner.nextLine();
-            Calculator.Calculate(M, op);
+            Calculator.Calculate(m, op);
           }
         } catch (Exception e) {
         }
@@ -21,12 +20,11 @@ public class Main {
       Scanner scanner = new Scanner(System.in);
       while (true) {
         try {
-          String m = scanner.nextLine();
-          int M = Integer.parseInt(m);
-          if (M == 0) break;
-          else if (!(M < 0) && !(M > 100)) {
+          int m = Integer.parseInt(scanner.nextLine());
+          if (m == 0) break;
+          else if (!(m < 0) && !(m > 100)) {
             String op = scanner.nextLine();
-            Calculator.Calculate(M, op);
+            Calculator.Calculate(m, op);
           }
         } catch (Exception ex) {}
       }
