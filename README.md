@@ -6,7 +6,7 @@ SP – Backend Journey (Spring Boot 24/07/2024)
 AWS Cloud Context  
 CHALLENGE**  
 
-This is the main branch, there you will encounter all
+This is the main branch, here you will encounter all
 the challenge questions solved, tested and working  
 
 ___
