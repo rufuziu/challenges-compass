@@ -6,15 +6,8 @@ SP – Backend Journey (Spring Boot 24/07/2024)
 AWS Cloud Context  
 CHALLENGE**  
 
-This is the main branch and it is an informational branch,  
-the challenge questions are solved in other branches with  
-this branch name pattern:
-
- - main-feature/Q-0n
- - dev-feature/Q-0n
-
-Being "n" a number equal to question number,  
-"main" to production version and "dev" to development version.
+This is the main branch, there you will encounter all
+the challenge questions solved, tested and working  
 
 ___
 
