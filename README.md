@@ -2,7 +2,7 @@
 # CHALLENGE 1 - WEEK 1
 
 **Programa de Bolsas  
-SP – Backend Journey (Spring Boot 24/07/2024)  
+SP – Backend Journey (Spring Boot 24/07/2023)  
 AWS Cloud Context  
 CHALLENGE**  
 
