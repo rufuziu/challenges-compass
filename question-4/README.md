@@ -25,3 +25,8 @@ Then the process is:
 - DROP the tables "Address" and "Person"
 - CONNECT to database "postgres"
 - DROP database "question04"
+
+*OBS: I have include the DROP TABLE and DATABASE  
+because is possible to see the two tables content  
+on the SELECT, so if you want persist the database  
+and the tables just comment or delete the lines 53...58*

@@ -20,8 +20,8 @@ CREATE TABLE Person (
   age INTERVAL ,
   phone VARCHAR(16) ,
   height DECIMAL(4,2) ,
-  email VARCHAR(128) NOT NULL ,
-  cpf VARCHAR(11) NOT NULL ,
+  email VARCHAR(128) NOT NULL UNIQUE,
+  cpf VARCHAR(11) NOT NULL UNIQUE,
   address_id INTEGER REFERENCES Address(addressId)
 );
 
