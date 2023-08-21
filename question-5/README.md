@@ -9,7 +9,7 @@ of the entities in the classes
 - Create the insert's with a JSON
 
 So I did using mapped entities  
-inserting the content of the a .json file  
+inserting the content of a .json file  
 
 To insert another registry change the values of  
 "testFile.json" and run the application
